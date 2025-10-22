@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Numex"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Numex" Height="500" Width="800">
     <Grid>
-
+        <!-- Menu -->
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Выбрать численный метод">
+                    <MenuItem Header="Метод дихотомии" Click="DichotomyMethod_Click"/>
+                    <MenuItem Header="Методы решения СЛАУ"/>
+                    <MenuItem Header="Метод золотого сечения"/>
+                    <MenuItem Header="Метод Ньютона"/>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="Edit"/>
+            <MenuItem Header="View"/>
+        </Menu>
+        
+        <!-- Window for different tasks -->
+        <ContentControl x:Name="MainContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,25,0,0"/>
     </Grid>
 </Window>

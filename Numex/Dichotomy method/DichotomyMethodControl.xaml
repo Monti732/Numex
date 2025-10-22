@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="Numex.Dichotomy_method.DichotomyMethodControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Numex.Dichotomy_method"
+             xmlns:scottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+             xmlns:utilities="clr-namespace:Numex.Utilities"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Panel - Controls -->
+        <StackPanel Grid.Column="0" Margin="20">
+
+            <!-- Function Input -->
+            <Grid Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="f(x) =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBox x:Name="FormulaTextBox" Grid.Column="1" Text="sin(x)" Height="25" FontSize="14"
+                         VerticalContentAlignment="Center" Padding="5,0" />
+            </Grid>
+
+            <!-- Parameter A -->
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="A =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBox x:Name="ValueATextBox" Grid.Column="1" Text="2.5" Height="25" FontSize="14"
+                         VerticalContentAlignment="Center" Padding="5,0" />
+            </Grid>
+
+            <!-- Parameter B -->
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="B =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBox x:Name="ValueBTextBox" Grid.Column="1" Text="3.5" Height="25" FontSize="14"
+                         VerticalContentAlignment="Center" Padding="5,0" />
+            </Grid>
+
+            <!-- Parameter E -->
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="E =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBox x:Name="ErrorValue" Grid.Column="1" Text="0.1" Height="25" FontSize="14"
+                         VerticalContentAlignment="Center" Padding="5,0" />
+            </Grid>
+
+            <!-- Parameter e -->
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="e =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBox x:Name="DecimalPrecisionTextBox" Grid.Column="1" Text="4" Height="25" FontSize="14"
+                         VerticalContentAlignment="Center" Padding="5,0" />
+            </Grid>
+
+            <!-- Output Section -->
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="0,15,0,0" Height="35">
+                <TextBlock x:Name="OutPutTextBlock" Text="" FontSize="14" VerticalAlignment="Center"
+                           Height="Auto" />
+            </Border>
+
+            <!-- Custom Range Section -->
+            <utilities:CustomPlotRenderPanel x:Name="CustomPlotRenderPanel" />
+            
+            <Button x:Name="PlotButton" Click="BuildPlot" Margin="10"/>
+            <Button x:Name="Root" Click="CalculateRoot" Margin="10"/>
+        </StackPanel>
+
+        <!-- Right Panel - Plot Area -->
+        <Border Grid.Column="1" Margin="20"
+                Background="White"
+                BorderBrush="#FFCCCCCC"
+                BorderThickness="1">
+
+            <!-- Plot -->
+            <scottPlot:WpfPlot x:Name="PlotArea" />
+        </Border>
+
+    </Grid>
+</UserControl>
