@@ -1,11 +1,10 @@
 ﻿using System.Windows;
 using Flee.PublicTypes;
-using Numex.Utilities;
 
-namespace Numex.Dichotomy_method;
+namespace Numex.Utilities.Services;
 
 public class PlotPointsArrayGenerator {
-  private readonly ExpressionContext _context = new ExpressionContext();
+  private readonly ExpressionContext _context = new();
   private readonly double _startX, _endX, _step;
   private readonly string _formula;
 

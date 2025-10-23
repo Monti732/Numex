@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="CalculateIcon" UriSource="/Icons/calculator.png"/>
+    <BitmapImage x:Key="GraphIcon" UriSource="/Icons/graph.png"/>
+    <BitmapImage x:Key="ResetIcon" UriSource="/Icons/reset.png"/>
+</ResourceDictionary>

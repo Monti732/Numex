@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Numex.Utilities;
+namespace Numex.Utilities.User_Controls;
 
 public partial class CustomPlotRenderPanel : UserControl {
   public CustomPlotRenderPanel() {

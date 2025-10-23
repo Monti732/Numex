@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Flee.PublicTypes;
 
-namespace Numex.Utilities;
+namespace Numex.Utilities.Services;
 
 public static class InputValidator {
   private static readonly NumberFormatInfo NumberFormat = CultureInfo.InvariantCulture.NumberFormat;
@@ -20,6 +20,7 @@ public static class InputValidator {
   }
 
   public static bool TryParseDouble(string input, out double value) {
+    input = input.Replace(',', '.');
     return double.TryParse(input, NumberFormat, out value);
   }
 

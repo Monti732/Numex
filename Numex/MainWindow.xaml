@@ -8,22 +8,35 @@
         Title="Numex" Height="500" Width="800">
     <Grid>
         <!-- Menu -->
-        <Menu Height="25" VerticalAlignment="Top">
+        <Menu x:Name="Menu" Height="25" VerticalAlignment="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Выбрать численный метод">
-                    <MenuItem Header="Метод дихотомии" Click="DichotomyMethod_Click"/>
-                    <MenuItem Header="Методы решения СЛАУ"/>
-                    <MenuItem Header="Метод золотого сечения"/>
-                    <MenuItem Header="Метод Ньютона"/>
-                </MenuItem>
+                <MenuItem Header="Метод дихотомии" Click="DichotomyShow" />
+                <MenuItem Header="Методы решения СЛАУ" />
+                <MenuItem Header="Метод золотого сечения" />
+                <MenuItem Header="Метод Ньютона" Click="NewtonShow" />
                 <Separator />
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" />
             </MenuItem>
-            <MenuItem Header="Edit"/>
-            <MenuItem Header="View"/>
+            <MenuItem Header="Edit" />
+            <MenuItem Header="View" />
+
+            <!-- Dichotomy method -->
+            <MenuItem x:Name="DichotomyMenuItem" Header="Метод дихотомии" Visibility="Collapsed">
+                <MenuItem Header="Найти корень" Click="DichotomyCalculate" />
+                <MenuItem Header="Построить график" Click="DichotomyBuildPlot" />
+                <MenuItem Header="Сброс" Click="DichotomyReset" />
+            </MenuItem>
+            
+            <!-- Newton method -->
+            <MenuItem x:Name="NewtonMenuItem" Header="Метод Ньютона" Visibility="Collapsed">
+                <MenuItem Header="Найти корень" Click="NewtonCalculate"/>
+                <MenuItem Header="Построить график" Click="NewtonBuildPlot"/>
+                <MenuItem Header="Сброс" Click="NewtonReset"/>
+            </MenuItem>
         </Menu>
-        
-        <!-- Window for different tasks -->
-        <ContentControl x:Name="MainContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,25,0,0"/>
+
+        <!-- Content window for different tasks -->
+        <ContentControl x:Name="MainContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        Margin="0,25,0,0" />
     </Grid>
 </Window>

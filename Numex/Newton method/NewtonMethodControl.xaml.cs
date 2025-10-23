@@ -1,15 +1,16 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using System.Windows.Controls;
 using Numex.Utilities.Services;
 
-namespace Numex.Dichotomy_method;
+namespace Numex.Newton_method;
 
-public partial class DichotomyMethodControl : UserControl {
-  private readonly DichotomyController _controller = new();
+public partial class NewtonMethodControl : UserControl {
+  private readonly NewtonController _controller = new();
   private readonly Style? _errorStyle = Application.Current.FindResource("TextBoxErrorStyle") as Style;
   private readonly Style? _defaultStyle = Application.Current.FindResource("DefaultTextBoxStyle") as Style;
 
-  public DichotomyMethodControl() {
+  public NewtonMethodControl() {
     InitializeComponent();
   }
 
@@ -24,6 +25,7 @@ public partial class DichotomyMethodControl : UserControl {
     var x1 = CustomPlotRenderPanel.X1TextBox.Text;
     var x2 = CustomPlotRenderPanel.X2TextBox.Text;
     var step = CustomPlotRenderPanel.StepTextBox.Text;
+    var formula = FunctionInput.TextBox.Text;
 
     var hasError = false;
 
@@ -44,9 +46,9 @@ public partial class DichotomyMethodControl : UserControl {
       }
     }
 
+    Console.WriteLine("Error");
     if (hasError) return;
 
-    var formula = FunctionInput.TextBox.Text;
 
     var (xPoints, yPoints) = await Task.Run(() =>
       _controller.GeneratePlotPoints(x1Value, x2Value, stepValue, formula));
@@ -57,26 +59,25 @@ public partial class DichotomyMethodControl : UserControl {
   }
 
   public async void CalculateRoot() {
-    var a = RangeParameters.TextBoxA.Text;
-    var b = RangeParameters.TextBoxB.Text;
     var e = ErrorValue.TextBox.Text;
-    var precision = DecimalPrecision.TextBox.Text;
     var formula = FunctionInput.TextBox.Text;
+    var precision = DecimalPrecision.TextBox.Text;
+    var x = ParameterX.TextBox.Text;
+    var h = ParameterH.TextBox.Text;
 
-    RangeParameters.TextBoxA.Style = _defaultStyle;
-    RangeParameters.TextBoxB.Style = _defaultStyle;
     ErrorValue.TextBox.Style = _defaultStyle;
     DecimalPrecision.TextBox.Style = _defaultStyle;
+    ParameterX.TextBox.Style = _defaultStyle;
 
     var hasError = false;
 
-    if (!InputValidator.TryParseDouble(a, out var valueA)) {
-      RangeParameters.TextBoxA.Style = _errorStyle;
+    if (!InputValidator.TryParseDouble(x, out var valueX)) {
+      ParameterX.TextBox.Style = _errorStyle;
       hasError = true;
     }
 
-    if (!InputValidator.TryParseDouble(b, out var valueB)) {
-      RangeParameters.TextBoxB.Style = _errorStyle;
+    if (!InputValidator.TryParseDouble(h, out var valueH)) {
+      ParameterH.TextBox.Style = _errorStyle;
       hasError = true;
     }
 
@@ -92,10 +93,10 @@ public partial class DichotomyMethodControl : UserControl {
 
     if (hasError) return;
 
-    InputValidator.TryParseDouble(e, out var eValue);
+    InputValidator.TryParseDouble(e, out var valueE);
 
     try {
-      var result = await Task.Run(() => _controller.Calculate(valueA, valueB, eValue, formula, precisionValue));
+      var result = await Task.Run(() => _controller.Calculate(valueX, valueE, valueH, formula, precisionValue));
       Output.TextBlock.Text = result;
     }
     catch (Exception ex) {
@@ -104,9 +105,9 @@ public partial class DichotomyMethodControl : UserControl {
   }
 
   public void Reset() {
-    RangeParameters.TextBoxB.Text = "";
-    RangeParameters.TextBoxA.Text = "";
     FunctionInput.TextBox.Text = "";
+    ParameterX.TextBox.Text = "";
+    ParameterH.TextBox.Text = "";
     ErrorValue.TextBox.Text = "";
     DecimalPrecision.TextBox.Text = "";
     CustomPlotRenderPanel.X1TextBox.Text = "";

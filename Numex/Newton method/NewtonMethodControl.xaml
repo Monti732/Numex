@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Numex.Dichotomy_method.DichotomyMethodControl"
+﻿<UserControl x:Class="Numex.Newton_method.NewtonMethodControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Numex.Dichotomy_method"
+             xmlns:local="clr-namespace:Numex.Newton_method"
              xmlns:scottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
              xmlns:utilities="clr-namespace:Numex.Utilities.User_Controls"
              mc:Ignorable="d"
@@ -18,23 +18,26 @@
         <StackPanel Grid.Column="0" Margin="20">
 
             <!-- Function Input -->
-            <utilities:FunctionInput x:Name="FunctionInput"/>
+            <utilities:FunctionInput x:Name="FunctionInput" />
 
-            <!-- Parameters Input -->
-            <utilities:RangeParameters x:Name="RangeParameters"/>
+            <!-- Parameter X -->
+            <utilities:Parameter x:Name="ParameterX" Margin="0,20,0,0" Label="x =" />
+
+            <!-- Parameter H -->
+            <utilities:Parameter x:Name="ParameterH" Margin="0,10,0,0" Label="h =" />
 
             <!-- Parameter E -->
-            <utilities:ErrorValueParameter x:Name="ErrorValue"/>
+            <utilities:ErrorValueParameter x:Name="ErrorValue" />
 
             <!-- Parameter e -->
-            <utilities:DecimalPrecisionParameter x:Name="DecimalPrecision"/>
+            <utilities:DecimalPrecisionParameter x:Name="DecimalPrecision" />
 
             <!-- Output Section -->
-            <utilities:Output x:Name="Output"/>
+            <utilities:Output x:Name="Output" />
 
             <!-- Custom Range Section -->
             <utilities:CustomPlotRenderPanel x:Name="CustomPlotRenderPanel" />
-            
+
         </StackPanel>
 
         <!-- Right Panel - Plot Area -->
