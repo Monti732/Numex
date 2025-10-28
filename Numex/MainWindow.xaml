@@ -6,37 +6,37 @@
         xmlns:local="clr-namespace:Numex"
         mc:Ignorable="d"
         Title="Numex" Height="500" Width="800">
-    <Grid>
-        <!-- Menu -->
-        <Menu x:Name="Menu" Height="25" VerticalAlignment="Top">
-            <MenuItem Header="File">
-                <MenuItem Header="Метод дихотомии" Click="DichotomyShow" />
-                <MenuItem Header="Методы решения СЛАУ" />
-                <MenuItem Header="Метод золотого сечения" />
-                <MenuItem Header="Метод Ньютона" Click="NewtonShow" />
-                <Separator />
-                <MenuItem Header="Exit" />
-            </MenuItem>
-            <MenuItem Header="Edit" />
-            <MenuItem Header="View" />
+  <Grid>
+    <!-- Menu -->
+    <Menu x:Name="Menu" Height="25" VerticalAlignment="Top">
+      <MenuItem Header="File">
+        <MenuItem Header="Метод дихотомии" Click="DichotomyShow" />
+        <MenuItem Header="Методы решения СЛАУ" />
+        <MenuItem Header="Метод золотого сечения" />
+        <MenuItem Header="Метод Ньютона" Click="NewtonShow" />
+        <Separator />
+        <MenuItem Header="Exit" />
+      </MenuItem>
+      <MenuItem Header="Edit" />
+      <MenuItem Header="View" />
 
-            <!-- Dichotomy method -->
-            <MenuItem x:Name="DichotomyMenuItem" Header="Метод дихотомии" Visibility="Collapsed">
-                <MenuItem Header="Найти корень" Click="DichotomyCalculate" />
-                <MenuItem Header="Построить график" Click="DichotomyBuildPlot" />
-                <MenuItem Header="Сброс" Click="DichotomyReset" />
-            </MenuItem>
-            
-            <!-- Newton method -->
-            <MenuItem x:Name="NewtonMenuItem" Header="Метод Ньютона" Visibility="Collapsed">
-                <MenuItem Header="Найти корень" Click="NewtonCalculate"/>
-                <MenuItem Header="Построить график" Click="NewtonBuildPlot"/>
-                <MenuItem Header="Сброс" Click="NewtonReset"/>
-            </MenuItem>
-        </Menu>
+      <!-- Dichotomy method Menu Item -->
+      <MenuItem x:Name="DichotomyMenuItem" Header="Метод дихотомии" Visibility="Collapsed">
+        <MenuItem Header="Найти корень" Click="DichotomyCalculate" />
+        <MenuItem Header="FaQ" Click="DichotomyFaq"/>
+        <MenuItem Header="Сброс" Click="DichotomyReset" />
+      </MenuItem>
 
-        <!-- Content window for different tasks -->
-        <ContentControl x:Name="MainContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                        Margin="0,25,0,0" />
-    </Grid>
+      <!-- Newton method Menu Item -->
+      <MenuItem x:Name="NewtonMenuItem" Header="Метод Ньютона" Visibility="Collapsed">
+        <MenuItem Header="Найти корень" Click="NewtonCalculate" />
+        <MenuItem Header="Сброс" Click="NewtonReset" />
+        <MenuItem Header="FaQ" Click="NewtonFaq"/> 
+      </MenuItem>
+    </Menu>
+
+    <!-- Content window for different tasks -->
+    <ContentControl x:Name="MainContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Margin="0,25,0,0" />
+  </Grid>
 </Window>

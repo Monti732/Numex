@@ -10,8 +10,11 @@
 
     <ItemGroup>
       <PackageReference Include="Flee" Version="2.0.0" />
+      <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3537.50" />
       <PackageReference Include="ScottPlot.WinForms" Version="5.1.57" />
       <PackageReference Include="ScottPlot.WPF" Version="5.1.57" />
+      <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+      <PackageReference Include="XamlAnimatedGif" Version="2.3.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -59,6 +62,30 @@
       <Page Update="Styles\Styles.xaml">
         <Generator>MSBuild:Compile</Generator>
       </Page>
+      <Page Update="Utilities\User Controls\FaqViewer.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Gif\cirlcleLoading.gif" />
+      <Resource Include="Gif\circleLoading.gif" />
+      <None Remove="Icons\calculator.png" />
+      <Resource Include="Icons\calculator.png" />
+      <None Remove="Icons\graph.png" />
+      <Resource Include="Icons\graph.png" />
+      <None Remove="Icons\reset.png" />
+      <Resource Include="Icons\reset.png" />
+      <None Remove="FaQs\dichotomyFaq.pdf" />
+      <Resource Include="FaQs\dichotomyFaq.pdf" />
+      <None Remove="FaQs\newtonFaq.pdf" />
+      <Resource Include="FaQs\newtonFaq.pdf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Utilities\Test\" />
     </ItemGroup>
 
 </Project>

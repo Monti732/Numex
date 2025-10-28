@@ -3,52 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Numex.Newton_method"
              xmlns:scottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
              xmlns:utilities="clr-namespace:Numex.Utilities.User_Controls"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="500">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="2*" />
+    </Grid.ColumnDefinitions>
 
-        <!-- Left Panel - Controls -->
-        <StackPanel Grid.Column="0" Margin="20">
+    <!-- Left Panel - Controls -->
+    <StackPanel Grid.Column="0" Margin="20">
 
-            <!-- Function Input -->
-            <utilities:FunctionInput x:Name="FunctionInput" />
+      <!-- Function Input -->
+      <utilities:FunctionInput x:Name="FunctionInput" />
 
-            <!-- Parameter X -->
-            <utilities:Parameter x:Name="ParameterX" Margin="0,20,0,0" Label="x =" />
+      <!-- Parameter X -->
+      <utilities:Parameter x:Name="ParameterX" Margin="0,20,0,0" Label="x =" />
 
-            <!-- Parameter H -->
-            <utilities:Parameter x:Name="ParameterH" Margin="0,10,0,0" Label="h =" />
+      <!-- Parameter H -->
+      <utilities:Parameter x:Name="ParameterH" Margin="0,10,0,0" Label="h =" />
 
-            <!-- Parameter E -->
-            <utilities:ErrorValueParameter x:Name="ErrorValue" />
+      <!-- Parameter E -->
+      <utilities:ErrorValueParameter x:Name="ErrorValue" />
 
-            <!-- Parameter e -->
-            <utilities:DecimalPrecisionParameter x:Name="DecimalPrecision" />
+      <!-- Parameter e -->
+      <utilities:DecimalPrecisionParameter x:Name="DecimalPrecision" />
 
-            <!-- Output Section -->
-            <utilities:Output x:Name="Output" />
+      <!-- Output Section -->
+      <utilities:Output x:Name="Output" />
 
-            <!-- Custom Range Section -->
-            <utilities:CustomPlotRenderPanel x:Name="CustomPlotRenderPanel" />
+    </StackPanel>
 
-        </StackPanel>
+    <!-- Right Panel - Plot Area -->
+    <Border Grid.Column="1" Margin="20"
+            Background="White"
+            BorderBrush="#FFCCCCCC"
+            BorderThickness="1">
 
-        <!-- Right Panel - Plot Area -->
-        <Border Grid.Column="1" Margin="20"
-                Background="White"
-                BorderBrush="#FFCCCCCC"
-                BorderThickness="1">
+      <!-- Plot -->
+      <DockPanel>
+        <wv2:WebView2 Name="DesmosView" Source="https://www.desmos.com/calculator?lang=ru"></wv2:WebView2>
+      </DockPanel>
+    </Border>
 
-            <!-- Plot -->
-            <scottPlot:WpfPlot x:Name="PlotArea" />
-        </Border>
-
-    </Grid>
+  </Grid>
 </UserControl>

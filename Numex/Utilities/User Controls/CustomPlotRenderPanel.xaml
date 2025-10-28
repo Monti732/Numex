@@ -5,52 +5,52 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel>
-            
-            <!-- Custom range Check Box -->
-            <CheckBox Content="Использовать свой диапазон"
-                      IsChecked="False"
-                      Checked="AllowCustomRange_OnChecked"
-                      Unchecked="AllowCustomRangeCheckBox_OnUnchecked"
-                      Margin="0,30,0,10" FontSize="12" />
-            
-            <!-- Input section -->
-            <StackPanel x:Name="InputSectionPanel" Visibility="Collapsed" >
-                
-                <!-- X1 Input -->
-                <Grid Margin="0,5,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="x1 =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
-                    <TextBox x:Name="X1TextBox" Grid.Column="1" Height="25" FontSize="14"
-                             VerticalContentAlignment="Center" Padding="5,0" />
-                </Grid>
+  <Grid>
+    <StackPanel>
 
-                <!-- X2 Input -->
-                <Grid Margin="0,10,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="x2 =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
-                    <TextBox x:Name="X2TextBox" Grid.Column="1" Height="25" FontSize="14"
-                             VerticalContentAlignment="Center" Padding="5,0" />
-                </Grid>
+      <!-- Custom range Check Box -->
+      <CheckBox Content="Использовать свой диапазон"
+                IsChecked="False"
+                Checked="AllowCustomRange_OnChecked"
+                Unchecked="AllowCustomRangeCheckBox_OnUnchecked"
+                Margin="0,30,0,10" FontSize="12" />
 
-                <!-- Step Input -->
-                <Grid Margin="0,10,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Шаг" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
-                    <TextBox x:Name="StepTextBox" Grid.Column="1" Height="25" FontSize="14"
-                             VerticalContentAlignment="Center" Padding="5,0" />
-                </Grid>
-            </StackPanel>
-        </StackPanel>
-    </Grid>
+      <!-- Input section -->
+      <StackPanel x:Name="InputSectionPanel" Visibility="Collapsed">
+
+        <!-- X1 Input -->
+        <Grid Margin="0,5,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="x1 =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+          <TextBox x:Name="X1TextBox" Grid.Column="1" Height="25" FontSize="14"
+                   VerticalContentAlignment="Center" Padding="5,0" />
+        </Grid>
+
+        <!-- X2 Input -->
+        <Grid Margin="0,10,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="x2 =" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+          <TextBox x:Name="X2TextBox" Grid.Column="1" Height="25" FontSize="14"
+                   VerticalContentAlignment="Center" Padding="5,0" />
+        </Grid>
+
+        <!-- Step Input -->
+        <Grid Margin="0,10,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="Шаг" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+          <TextBox x:Name="StepTextBox" Grid.Column="1" Height="25" FontSize="14"
+                   VerticalContentAlignment="Center" Padding="5,0" />
+        </Grid>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
 </UserControl>

@@ -22,9 +22,9 @@ namespace Numex.Newton_method;
        nextX = x - fx / dfx;
        
        x = nextX;
-     }
 
-     if (nextX is double.NaN) return "Корней нет";
+       if (nextX is double.NaN) return "Корней нет";
+     }
      
      return nextX.ToString();
    }

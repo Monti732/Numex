@@ -21,7 +21,7 @@ public class PlotPointsArrayGenerator {
     _step = step;
     _formula = formula;
   }
-
+ 
   private double[] GetYPoints() {
     List<double> pointsY = [];
     var xPoints = GetXPoints();

@@ -7,7 +7,7 @@ namespace Numex;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
-public partial class MainWindow : Window {
+public partial class MainWindow {
   private readonly DichotomyMethodControl _dichotomyMethodControl = new();
   private readonly NewtonMethodControl _newtonMethodControl = new();
 
@@ -17,26 +17,24 @@ public partial class MainWindow : Window {
 
   private void DichotomyShow(object sender, RoutedEventArgs e) {
     MainContent.Content = _dichotomyMethodControl;
-    DichotomyMenuItem.Visibility = Visibility.Visible;
+    DisplayItem(MenuItems.Dichotomy);
   }
-  
-  private void DichotomyCalculate(object sender, RoutedEventArgs e) =>
-    _dichotomyMethodControl.CalculateRoot();
 
-  private void DichotomyBuildPlot(object sender, RoutedEventArgs e) =>
-    _dichotomyMethodControl.BuildPlot();
+  private void DichotomyCalculate(object sender, RoutedEventArgs e) => _dichotomyMethodControl.CalculateRoot();
 
   private void DichotomyReset(object sender, RoutedEventArgs e) =>
     _dichotomyMethodControl.Reset();
-  
+
+  private void DichotomyFaq(object sender, RoutedEventArgs e) => _dichotomyFaqViewer.ShowDialog();
+
   private void NewtonShow(object sender, RoutedEventArgs e) {
     MainContent.Content = _newtonMethodControl;
-    NewtonMenuItem.Visibility = Visibility.Visible;
+    DisplayItem(MenuItems.Newton);
   }
 
   private void NewtonCalculate(object sender, RoutedEventArgs e) => _newtonMethodControl.CalculateRoot();
 
-  private void NewtonBuildPlot(object sender, RoutedEventArgs e) => _newtonMethodControl.BuildPlot();
-  
   private void NewtonReset(object sender, RoutedEventArgs e) => _newtonMethodControl.Reset();
+
+  private void NewtonFaq(object sender, RoutedEventArgs e) => _newtonFaqViewer.ShowDialog();
 }

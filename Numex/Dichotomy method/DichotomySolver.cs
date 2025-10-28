@@ -31,6 +31,8 @@ public class DichotomySolver(double a, double b, double epsilon, string formula)
         a = c;
         fa = fc;
       }
+
+      if (c is double.NaN) return "Корней нет";
     }
 
     return c.ToString();
