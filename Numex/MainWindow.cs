@@ -5,8 +5,8 @@ using Numex.Utilities.User_Controls;
 namespace Numex;
 
 public partial class MainWindow {
-  private readonly FaqViewer _newtonFaqViewer = new(new Uri(@"file:///C:\Users\Monti XD\Desktop\Numex\Numex\FaQs\newtonFaq.pdf"));
-  private readonly FaqViewer _dichotomyFaqViewer = new(new Uri(@"file:///C:\Users\Monti XD\Desktop\Numex\Numex\FaQs\dichotomyFaq.pdf"));
+  private readonly FaqViewer _newtonFaqViewer = new(new Uri(@"file:///C:\Users\Monti XD\Desktop\Numex\Numex\Resources\FaQs\newtonFaq.pdf"));
+  private readonly FaqViewer _dichotomyFaqViewer = new(new Uri(@"file:///C:\Users\Monti XD\Desktop\Numex\Numex\Resources\FaQs\dichotomyFaq.pdf"));
   
   private enum MenuItems {
     Dichotomy,

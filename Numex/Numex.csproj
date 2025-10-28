@@ -67,21 +67,31 @@
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
       </Page>
+      <Page Update="Resources\Xaml\Icons.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Resources\Xaml\Styles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Gif\cirlcleLoading.gif" />
-      <Resource Include="Gif\circleLoading.gif" />
       <None Remove="Icons\calculator.png" />
-      <Resource Include="Icons\calculator.png" />
       <None Remove="Icons\graph.png" />
-      <Resource Include="Icons\graph.png" />
       <None Remove="Icons\reset.png" />
-      <Resource Include="Icons\reset.png" />
       <None Remove="FaQs\dichotomyFaq.pdf" />
-      <Resource Include="FaQs\dichotomyFaq.pdf" />
       <None Remove="FaQs\newtonFaq.pdf" />
-      <Resource Include="FaQs\newtonFaq.pdf" />
+      <Resource Include="Resources\FaQs\dichotomyFaq.pdf" />
+      <Resource Include="Resources\FaQs\newtonFaq.pdf" />
+      <Resource Include="Resources\Gif\circleLoading.gif" />
+      <Resource Include="Resources\Icons\calculator.png" />
+      <Resource Include="Resources\Icons\graph.png" />
+      <Resource Include="Resources\Icons\reset.png" />
     </ItemGroup>
 
     <ItemGroup>

@@ -9,7 +9,7 @@
   <Grid>
     <Border BorderBrush="Gray" BorderThickness="1" Margin="0,15,0,0" Height="35">
       <Grid>
-        <Image x:Name="Gif" gif:AnimationBehavior.SourceUri="/Gif/circleLoading.gif" Visibility="Collapsed" />
+        <Image x:Name="Gif" gif:AnimationBehavior.SourceUri="/Resources/Gif/circleLoading.gif" Visibility="Collapsed" />
         <TextBlock x:Name="TextBlock"
                    Text="" FontSize="14"
                    VerticalAlignment="Center"

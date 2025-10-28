@@ -23,8 +23,8 @@
       <!-- Dichotomy method Menu Item -->
       <MenuItem x:Name="DichotomyMenuItem" Header="Метод дихотомии" Visibility="Collapsed">
         <MenuItem Header="Найти корень" Click="DichotomyCalculate" />
-        <MenuItem Header="FaQ" Click="DichotomyFaq"/>
         <MenuItem Header="Сброс" Click="DichotomyReset" />
+        <MenuItem Header="FaQ" Click="DichotomyFaq"/>
       </MenuItem>
 
       <!-- Newton method Menu Item -->
