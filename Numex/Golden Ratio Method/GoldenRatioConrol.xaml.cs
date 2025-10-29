@@ -2,14 +2,14 @@
 using System.Windows.Controls;
 using Numex.Utilities.Services;
 
-namespace Numex.Dichotomy_method;
+namespace Numex.Golden_Ratio_Method;
 
-public partial class DichotomyMethodControl : UserControl {
-  private readonly DichotomyController _controller = new();
+public partial class GoldenRatioControl : UserControl {
+  private readonly GoldenRatioController _controller = new();
   private readonly Style? _errorStyle = Application.Current.FindResource("TextBoxErrorStyle") as Style;
   private readonly Style? _defaultStyle = Application.Current.FindResource("DefaultTextBoxStyle") as Style;
   
-  public DichotomyMethodControl() {
+  public GoldenRatioControl() {
     InitializeComponent();
   }
   
@@ -19,6 +19,7 @@ public partial class DichotomyMethodControl : UserControl {
     var e = ErrorValue.TextBox.Text;
     var precision = DecimalPrecision.TextBox.Text;
     var formula = FunctionInput.TextBox.Text;
+    var findMax = FindMax.SelectedIndex == 1 ? true : false;
 
     RangeParameters.TextBoxA.Style = _defaultStyle;
     RangeParameters.TextBoxB.Style = _defaultStyle;
@@ -54,7 +55,7 @@ public partial class DichotomyMethodControl : UserControl {
     try {
       Output.TextBlock.Text = "";
       Output.Gif.Visibility = Visibility.Visible;
-      var result = await Task.Run(() => _controller.Calculate(valueA, valueB, eValue, formula, precisionValue));
+      var result = await Task.Run(() => _controller.Calculate(valueA, valueB, eValue, formula, findMax, precisionValue));
       Output.Gif.Visibility = Visibility.Collapsed;
       Output.TextBlock.Text = result;
     }

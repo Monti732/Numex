@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Numex.Dichotomy_method;
+using Numex.Golden_Ratio_Method;
 using Numex.Newton_method;
 
 namespace Numex;
@@ -10,6 +11,7 @@ namespace Numex;
 public partial class MainWindow {
   private readonly DichotomyMethodControl _dichotomyMethodControl = new();
   private readonly NewtonMethodControl _newtonMethodControl = new();
+  private readonly GoldenRatioControl _goldenRatioControl = new();
 
   public MainWindow() {
     InitializeComponent();
@@ -37,4 +39,15 @@ public partial class MainWindow {
   private void NewtonReset(object sender, RoutedEventArgs e) => _newtonMethodControl.Reset();
 
   private void NewtonFaq(object sender, RoutedEventArgs e) => _newtonFaqViewer.ShowDialog();
+  
+  private void GoldenRatioShow(object sender, RoutedEventArgs e) {
+    MainContent.Content = _goldenRatioControl;
+    DisplayItem(MenuItems.GoldenRatio);
+  }
+  
+  private void GoldenRatioCalculate(object sender, RoutedEventArgs e) => _goldenRatioControl.CalculateRoot();
+  
+  private void GoldenRatioReset(object sender, RoutedEventArgs e) => _goldenRatioControl.Reset();
+  
+  private void GoldenRatioFaq(object sender, RoutedEventArgs e) => _goldenRatioFaqViewer.ShowDialog();
 }

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Numex.Golden_Ratio_Method.GoldenRatioControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Numex.Golden_Ratio_Method"
+             xmlns:utilities="clr-namespace:Numex.Utilities.User_Controls"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="700">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="2*" />
+    </Grid.ColumnDefinitions>
+
+    <!-- Left Panel - Controls -->
+    <StackPanel Grid.Column="0" Margin="20">
+
+      <!-- Function Input -->
+      <utilities:FunctionInput x:Name="FunctionInput" />
+
+      <!-- Parameters Input -->
+      <utilities:RangeParameters x:Name="RangeParameters" />
+
+      <!-- Parameter E -->
+      <utilities:ErrorValueParameter x:Name="ErrorValue" />
+
+      <!-- Parameter e -->
+      <utilities:DecimalPrecisionParameter x:Name="DecimalPrecision" />
+
+      <ComboBox x:Name="FindMax" Margin="0, 10, 0, 0" SelectedIndex="0">
+        <ComboBoxItem>Найти максимум функции</ComboBoxItem>
+        <ComboBoxItem>Найти минимум функции</ComboBoxItem>
+      </ComboBox>
+
+      <!-- Output Section -->
+      <utilities:Output x:Name="Output" />
+
+    </StackPanel>
+
+    <!-- Right Panel - Plot Area -->
+    <Border Grid.Column="1" Margin="20"
+            Background="White"
+            BorderBrush="#FFCCCCCC"
+            BorderThickness="1">
+
+      <!-- Plot -->
+      <DockPanel>
+        <wv2:WebView2 Name="DesmosView" Source="https://www.desmos.com/calculator?lang=ru"></wv2:WebView2>
+      </DockPanel>
+    </Border>
+
+  </Grid>
+</UserControl>

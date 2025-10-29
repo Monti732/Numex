@@ -12,7 +12,7 @@
       <MenuItem Header="File">
         <MenuItem Header="Метод дихотомии" Click="DichotomyShow" />
         <MenuItem Header="Методы решения СЛАУ" />
-        <MenuItem Header="Метод золотого сечения" />
+        <MenuItem Header="Метод золотого сечения" Click="GoldenRatioShow" />
         <MenuItem Header="Метод Ньютона" Click="NewtonShow" />
         <Separator />
         <MenuItem Header="Exit" />
@@ -24,14 +24,21 @@
       <MenuItem x:Name="DichotomyMenuItem" Header="Метод дихотомии" Visibility="Collapsed">
         <MenuItem Header="Найти корень" Click="DichotomyCalculate" />
         <MenuItem Header="Сброс" Click="DichotomyReset" />
-        <MenuItem Header="FaQ" Click="DichotomyFaq"/>
+        <MenuItem Header="FaQ" Click="DichotomyFaq" />
       </MenuItem>
 
       <!-- Newton method Menu Item -->
       <MenuItem x:Name="NewtonMenuItem" Header="Метод Ньютона" Visibility="Collapsed">
         <MenuItem Header="Найти корень" Click="NewtonCalculate" />
         <MenuItem Header="Сброс" Click="NewtonReset" />
-        <MenuItem Header="FaQ" Click="NewtonFaq"/> 
+        <MenuItem Header="FaQ" Click="NewtonFaq" />
+      </MenuItem>
+
+      <!-- Golden Ratio method Menu Item -->
+      <MenuItem x:Name="GoldenRatioMenuItem" Header="Метод золотого сечения" Visibility="Collapsed">
+        <MenuItem Header="Найти экстремум" Click="GoldenRatioCalculate" />
+        <MenuItem Header="Сброс" Click="GoldenRatioReset" />
+        <MenuItem Header="FaQ" Click="GoldenRatioFaq" />
       </MenuItem>
     </Menu>
 

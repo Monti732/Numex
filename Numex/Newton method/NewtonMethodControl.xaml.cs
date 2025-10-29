@@ -68,5 +68,6 @@ public partial class NewtonMethodControl : UserControl {
     ParameterH.TextBox.Text = "";
     ErrorValue.TextBox.Text = "";
     DecimalPrecision.TextBox.Text = "";
+    Output.TextBlock.Text = "";
   }
 }
