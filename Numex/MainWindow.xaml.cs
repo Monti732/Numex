@@ -15,6 +15,12 @@ public partial class MainWindow {
 
   public MainWindow() {
     InitializeComponent();
+
+    _menuControls = new() {
+      { MenuItems.Dichotomy, DichotomyMenuItem },
+      { MenuItems.Newton , NewtonMenuItem},
+      { MenuItems.GoldenRatio, GoldenRatioMenuItem }
+    };
   }
 
   /// <summary>
@@ -45,7 +51,7 @@ public partial class MainWindow {
   private void NewtonReset(object sender, RoutedEventArgs e) => _newtonMethodControl.Reset();
 
   private void NewtonFaq(object sender, RoutedEventArgs e) => _newtonFaqViewer.ShowDialog();
-  
+
   /// <summary>
   /// Golden ratio method block 
   /// </summary>
@@ -53,10 +59,10 @@ public partial class MainWindow {
     MainContent.Content = _goldenRatioControl;
     DisplayItem(MenuItems.GoldenRatio);
   }
-  
+
   private void GoldenRatioCalculate(object sender, RoutedEventArgs e) => _goldenRatioControl.CalculateRoot();
-  
+
   private void GoldenRatioReset(object sender, RoutedEventArgs e) => _goldenRatioControl.Reset();
-  
+
   private void GoldenRatioFaq(object sender, RoutedEventArgs e) => _goldenRatioFaqViewer.ShowDialog();
 }
