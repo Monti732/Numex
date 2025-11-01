@@ -1,10 +1,9 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using Numex.Utilities.Services;
 
 namespace Numex.Golden_Ratio_Method;
 
-public partial class GoldenRatioControl : UserControl {
+public partial class GoldenRatioControl {
   private readonly GoldenRatioController _controller = new();
   private readonly Style? _errorStyle = Application.Current.FindResource("TextBoxErrorStyle") as Style;
   private readonly Style? _defaultStyle = Application.Current.FindResource("DefaultTextBoxStyle") as Style;

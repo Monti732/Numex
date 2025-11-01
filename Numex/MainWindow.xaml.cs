@@ -17,6 +17,9 @@ public partial class MainWindow {
     InitializeComponent();
   }
 
+  /// <summary>
+  /// Dichotomy method block
+  /// </summary>
   private void DichotomyShow(object sender, RoutedEventArgs e) {
     MainContent.Content = _dichotomyMethodControl;
     DisplayItem(MenuItems.Dichotomy);
@@ -29,6 +32,9 @@ public partial class MainWindow {
 
   private void DichotomyFaq(object sender, RoutedEventArgs e) => _dichotomyFaqViewer.ShowDialog();
 
+  /// <summary>
+  /// Newton method block
+  /// </summary>
   private void NewtonShow(object sender, RoutedEventArgs e) {
     MainContent.Content = _newtonMethodControl;
     DisplayItem(MenuItems.Newton);
@@ -40,6 +46,9 @@ public partial class MainWindow {
 
   private void NewtonFaq(object sender, RoutedEventArgs e) => _newtonFaqViewer.ShowDialog();
   
+  /// <summary>
+  /// Golden ratio method block 
+  /// </summary>
   private void GoldenRatioShow(object sender, RoutedEventArgs e) {
     MainContent.Content = _goldenRatioControl;
     DisplayItem(MenuItems.GoldenRatio);

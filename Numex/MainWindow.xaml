@@ -22,7 +22,11 @@
 
       <!-- Dichotomy method Menu Item -->
       <MenuItem x:Name="DichotomyMenuItem" Header="Метод дихотомии" Visibility="Collapsed">
-        <MenuItem Header="Найти корень" Click="DichotomyCalculate" />
+        <MenuItem Header="Найти корень" Click="DichotomyCalculate">
+          <MenuItem.Icon>
+            <Image></Image>
+          </MenuItem.Icon>
+        </MenuItem>
         <MenuItem Header="Сброс" Click="DichotomyReset" />
         <MenuItem Header="FaQ" Click="DichotomyFaq" />
       </MenuItem>

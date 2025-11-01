@@ -88,14 +88,14 @@
       <None Remove="FaQs\newtonFaq.pdf" />
       <Resource Include="Resources\FaQs\dichotomyFaq.pdf" />
       <Resource Include="Resources\FaQs\newtonFaq.pdf" />
-      <Resource Include="Resources\Gif\circleLoading.gif" />
       <Resource Include="Resources\Icons\calculator.png" />
       <Resource Include="Resources\Icons\graph.png" />
       <Resource Include="Resources\Icons\reset.png" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Utilities\Test\" />
+      <Reference Include="NumexControls">
+        <HintPath>..\..\NumexControls\NumexControls\bin\Release\net9.0-windows\NumexControls.dll</HintPath>
+      </Reference>
     </ItemGroup>
-
 </Project>

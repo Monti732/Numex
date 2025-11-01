@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:utilities="clr-namespace:Numex.Utilities.User_Controls"
-             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             xmlns:controls="clr-namespace:NumexControls.controls;assembly=NumexControls"
+             xmlns:desmos="clr-namespace:NumexControls.Desmos;assembly=NumexControls"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="500">
   <Grid>
@@ -17,19 +17,19 @@
     <StackPanel Grid.Column="0" Margin="20">
 
       <!-- Function Input -->
-      <utilities:FunctionInput x:Name="FunctionInput" />
+      <controls:FunctionInput x:Name="FunctionInput" />
 
       <!-- Parameters Input -->
-      <utilities:RangeParameters x:Name="RangeParameters" />
+      <controls:RangeParameters x:Name="RangeParameters" />
 
       <!-- Parameter E -->
-      <utilities:ErrorValueParameter x:Name="ErrorValue" />
+      <controls:ErrorValueParameter x:Name="ErrorValue" />
 
       <!-- Parameter e -->
-      <utilities:DecimalPrecisionParameter x:Name="DecimalPrecision" />
+      <controls:DecimalPrecisionParameter x:Name="DecimalPrecision" />
 
       <!-- Output Section -->
-      <utilities:Output x:Name="Output" />
+      <controls:Output x:Name="Output" />
 
     </StackPanel>
 
@@ -40,9 +40,7 @@
             BorderThickness="1">
 
       <!-- Plot -->
-      <DockPanel>
-        <wv2:WebView2 Name="DesmosView" Source="https://www.desmos.com/calculator?lang=ru"></wv2:WebView2>
-      </DockPanel>
+      <desmos:DesmosApiControl />
     </Border>
 
   </Grid>

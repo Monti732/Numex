@@ -1,13 +1,11 @@
 ﻿using System.Windows;
-using Numex.Utilities.Services;
-using Numex.Utilities.User_Controls;
+using NumexControls.controls;
 
 namespace Numex;
 
 public partial class MainWindow {
   private readonly FaqViewer _newtonFaqViewer = new(new Uri(@"file:///C:\Users\Monti XD\Desktop\Numex\Numex\Resources\FaQs\newtonFaq.pdf"));
   private readonly FaqViewer _dichotomyFaqViewer = new(new Uri(@"file:///C:\Users\Monti XD\Desktop\Numex\Numex\Resources\FaQs\dichotomyFaq.pdf"));
-
   private readonly FaqViewer _goldenRatioFaqViewer =
     new(new Uri(@"file:///C:\Users\Monti XD\Desktop\Numex\Numex\Resources\FaQs\goldenRatioFaq.pdf"));
   

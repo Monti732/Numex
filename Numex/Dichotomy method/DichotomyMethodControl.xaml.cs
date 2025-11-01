@@ -1,10 +1,9 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using Numex.Utilities.Services;
 
 namespace Numex.Dichotomy_method;
 
-public partial class DichotomyMethodControl : UserControl {
+public partial class DichotomyMethodControl {
   private readonly DichotomyController _controller = new();
   private readonly Style? _errorStyle = Application.Current.FindResource("TextBoxErrorStyle") as Style;
   private readonly Style? _defaultStyle = Application.Current.FindResource("DefaultTextBoxStyle") as Style;
