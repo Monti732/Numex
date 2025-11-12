@@ -2,6 +2,7 @@
 using Numex.Dichotomy_method;
 using Numex.Golden_Ratio_Method;
 using Numex.Newton_method;
+using Numex.Sorts;
 
 namespace Numex;
 
@@ -12,14 +13,16 @@ public partial class MainWindow {
   private readonly DichotomyMethodControl _dichotomyMethodControl = new();
   private readonly NewtonMethodControl _newtonMethodControl = new();
   private readonly GoldenRatioControl _goldenRatioControl = new();
+  private readonly SortsControl _sortsControl = new();
 
   public MainWindow() {
     InitializeComponent();
 
-    _menuControls = new() {
+    _menuControls = new Dictionary<MenuItems, FrameworkElement> {
       { MenuItems.Dichotomy, DichotomyMenuItem },
-      { MenuItems.Newton , NewtonMenuItem},
-      { MenuItems.GoldenRatio, GoldenRatioMenuItem }
+      { MenuItems.Newton, NewtonMenuItem },
+      { MenuItems.GoldenRatio, GoldenRatioMenuItem },
+      { MenuItems.Sorting, SortingAlgorithmsMenuItem }
     };
   }
 
@@ -65,4 +68,12 @@ public partial class MainWindow {
   private void GoldenRatioReset(object sender, RoutedEventArgs e) => _goldenRatioControl.Reset();
 
   private void GoldenRatioFaq(object sender, RoutedEventArgs e) => _goldenRatioFaqViewer.ShowDialog();
+
+  /// <summary>
+  /// Sorting algorithms block
+  /// </summary>
+  private void SortingAlgorithmsShow(object sender, RoutedEventArgs e) {
+    MainContent.Content = _sortsControl;
+    DisplayItem(MenuItems.Sorting);
+  }
 }

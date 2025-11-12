@@ -1,5 +1,4 @@
-﻿using System.Drawing.Imaging;
-using System.Windows;
+﻿using System.Windows;
 using NumexControls.controls;
 
 namespace Numex;
@@ -18,6 +17,7 @@ public partial class MainWindow {
     Dichotomy,
     Newton,
     GoldenRatio,
+    Sorting,
   }
 
   private readonly Dictionary<MenuItems, FrameworkElement> _menuControls;
@@ -25,7 +25,8 @@ public partial class MainWindow {
   private readonly Dictionary<MenuItems, Visibility> _menuItemsState = new() {
     { MenuItems.Dichotomy, Visibility.Collapsed },
     { MenuItems.Newton, Visibility.Collapsed },
-    { MenuItems.GoldenRatio, Visibility.Collapsed }
+    { MenuItems.GoldenRatio, Visibility.Collapsed },
+    { MenuItems.Sorting, Visibility.Collapsed}
   };
 
   private void DisplayItem(MenuItems menuItem) {
