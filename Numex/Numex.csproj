@@ -8,4 +8,94 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Flee" Version="2.0.0" />
+      <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3537.50" />
+      <PackageReference Include="ScottPlot.WinForms" Version="5.1.57" />
+      <PackageReference Include="ScottPlot.WPF" Version="5.1.57" />
+      <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+      <PackageReference Include="XamlAnimatedGif" Version="2.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="ResourcesDictionary.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+        <Link>Resources\ResourcesDictionary.xaml</Link>
+      </Page>
+      <Page Update="Utility\Styles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Utilities\User Controls\CustomPlotRenderPanel.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Utilities\User Controls\DecimalPrecisionParameter.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Utilities\User Controls\ErrorValueParameter.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Utilities\User Controls\FunctionInput.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Utilities\User Controls\Output.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Utilities\User Controls\RangeParameters.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Styles\Styles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
+      <Page Update="Utilities\User Controls\FaqViewer.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Resources\Xaml\Icons.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Resources\Xaml\Styles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Gif\cirlcleLoading.gif" />
+      <None Remove="Icons\calculator.png" />
+      <None Remove="Icons\graph.png" />
+      <None Remove="Icons\reset.png" />
+      <None Remove="FaQs\dichotomyFaq.pdf" />
+      <None Remove="FaQs\newtonFaq.pdf" />
+      <Resource Include="Resources\FaQs\dichotomyFaq.pdf" />
+      <Resource Include="Resources\FaQs\newtonFaq.pdf" />
+      <Resource Include="Resources\Icons\calculator.png" />
+      <Resource Include="Resources\Icons\graph.png" />
+      <Resource Include="Resources\Icons\reset.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="NumexControls">
+        <HintPath>..\..\NumexControls\NumexControls\bin\Release\net9.0-windows\NumexControls.dll</HintPath>
+      </Reference>
+    </ItemGroup>
 </Project>

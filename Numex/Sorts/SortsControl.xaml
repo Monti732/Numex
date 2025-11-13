@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Numex.Sorts.SortsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:NumexControls.controls;assembly=NumexControls"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="500">
+  <Grid>
+    <!--<Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>-->
+
+    <StackPanel Grid.Column="0" Margin="20">
+      <StackPanel>
+        <CheckBox x:Name="BubbleSortCheckBox">
+          <TextBlock Text="Пузырьковая сортировка" FontSize="14" VerticalAlignment="Center" />
+        </CheckBox>
+        <CheckBox x:Name="InsertSortCheckBox" Margin="0,10,0,0">
+          <TextBlock Text="Сортировка вставками" FontSize="14" VerticalAlignment="Center" />
+        </CheckBox>
+        <CheckBox x:Name="CocktailSortCheckBox" Margin="0,10,0,0">
+          <TextBlock Text="Шейкерная сортировка" FontSize="14" VerticalAlignment="Center" />
+        </CheckBox>
+        <CheckBox x:Name="QuickSortCheckBox" Margin="0,10,0,0">
+          <TextBlock Text="Быстрая сортировка" FontSize="14" VerticalAlignment="Center" />
+        </CheckBox>
+        <CheckBox x:Name="BogoSortCheckBox" Margin="0,10,0,0">
+          <TextBlock Text="Bogo(болотная) сортировка" FontSize="14" VerticalAlignment="Center" />
+        </CheckBox>
+        <controls:Parameter x:Name="BogoSortIterations" Label="Количество итераций" Visibility="Collapsed"/>
+      </StackPanel>
+      
+      <Button Height="30" Width="30" Margin="10" Click="ButtonBase_OnClick"></Button>
+
+      <StackPanel Margin="0,50,0,0">
+        <Grid x:Name="BubbleSortRow" Visibility="Visible">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+          </Grid.RowDefinitions>
+          <controls:GridCell Grid.Column="0" Grid.Row="0" Text="Пузырьковая сортировка"></controls:GridCell>
+          <controls:GridCell x:Name="BubbleSortTimeGridCell" Grid.Column="1" Grid.Row="0" Text="" />
+        </Grid>
+
+        <Grid x:Name="InsertSortRow">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+          </Grid.RowDefinitions>
+          <controls:GridCell Grid.Column="0" Grid.Row="0" Text="Сортировка вставками"></controls:GridCell>
+          <controls:GridCell x:Name="InsertSortTimeGridCell" Grid.Column="1" Grid.Row="0" Text="" />
+        </Grid>
+
+        <Grid x:Name="CocktailSortRow">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+          </Grid.RowDefinitions>
+          <controls:GridCell Grid.Column="0" Grid.Row="0" Text="Шейкерная сортировка"></controls:GridCell>
+          <controls:GridCell x:Name="CocktailSortTimeGridCell" Grid.Column="1" Grid.Row="0" Text="" />
+        </Grid>
+
+        <Grid x:Name="QuickSortRow">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+          </Grid.RowDefinitions>
+          <controls:GridCell Grid.Column="0" Grid.Row="0" Text="Быстрая сортировка"></controls:GridCell>
+          <controls:GridCell x:Name="QuickSortTimeGridCell" Grid.Column="1" Grid.Row="0" Text="" />
+        </Grid>
+
+        <Grid x:Name="BogoSortRow">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+          </Grid.RowDefinitions>
+          <controls:GridCell Grid.Column="0" Grid.Row="0" Text="Bogo(болотоная) сортировка"></controls:GridCell>
+          <controls:GridCell x:Name="BogoSortTimeGridCell" Grid.Column="1" Grid.Row="0" Text="" />
+        </Grid>
+      </StackPanel>
+      
+    </StackPanel>
+  </Grid>
+</UserControl>

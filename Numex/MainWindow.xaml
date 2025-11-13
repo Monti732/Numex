@@ -5,8 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Numex"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Numex" Height="500" Width="800">
+  <Grid>
+    <!-- Menu -->
+    <Menu x:Name="Menu" Height="25" VerticalAlignment="Top">
+      <MenuItem Header="File">
+        <MenuItem Header="Метод дихотомии" Click="DichotomyShow" />
+        <MenuItem Header="Методы решения СЛАУ" />
+        <MenuItem Header="Метод золотого сечения" Click="GoldenRatioShow" />
+        <MenuItem Header="Метод Ньютона" Click="NewtonShow" />
+        <MenuItem Header="Сортировки" Click="SortingAlgorithmsShow" />
+        <Separator />
+        <MenuItem Header="Exit" />
+      </MenuItem>
+      <MenuItem Header="Edit" />
+      <MenuItem Header="View" />
 
-    </Grid>
+      <!-- Dichotomy method Menu Item -->
+      <MenuItem x:Name="DichotomyMenuItem" Header="Метод дихотомии" Visibility="Collapsed">
+        <MenuItem Header="Найти корень" Click="DichotomyCalculate" />
+        <MenuItem Header="Сброс" Click="DichotomyReset" />
+        <MenuItem Header="FaQ" Click="DichotomyFaq" />
+      </MenuItem>
+
+      <!-- Newton method Menu Item -->
+      <MenuItem x:Name="NewtonMenuItem" Header="Метод Ньютона" Visibility="Collapsed">
+        <MenuItem Header="Найти корень" Click="NewtonCalculate" />
+        <MenuItem Header="Сброс" Click="NewtonReset" />
+        <MenuItem Header="FaQ" Click="NewtonFaq" />
+      </MenuItem>
+
+      <!-- Golden Ratio method Menu Item -->
+      <MenuItem x:Name="GoldenRatioMenuItem" Header="Метод золотого сечения" Visibility="Collapsed">
+        <MenuItem Header="Найти экстремум" Click="GoldenRatioCalculate" />
+        <MenuItem Header="Сброс" Click="GoldenRatioReset" />
+        <MenuItem Header="FaQ" Click="GoldenRatioFaq" />
+      </MenuItem>
+
+      <!-- Sorting algorithms Menu Item -->
+      <MenuItem x:Name="SortingAlgorithmsMenuItem" Header="Сортировки" Visibility="Collapsed">
+        <MenuItem Header="Запуск" />
+        <MenuItem Header="Массив(добавить массив?)">
+          <MenuItem Header="В ручную" />
+          <MenuItem Header="Из файла" />
+          <MenuItem Header="Рандом" />
+        </MenuItem>
+        <MenuItem Header="Сброс" />
+        <MenuItem Header="FaQ" />
+      </MenuItem>
+
+    </Menu>
+
+    <!-- Content window for different tasks -->
+    <ContentControl x:Name="MainContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Margin="0,25,0,0" />
+  </Grid>
 </Window>

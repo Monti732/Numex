@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Numex.Newton_method.NewtonMethodControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:NumexControls.controls;assembly=NumexControls"
+             xmlns:desmos="clr-namespace:NumexControls.Desmos;assembly=NumexControls"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="500">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="2*" />
+    </Grid.ColumnDefinitions>
+
+    <!-- Left Panel - Controls -->
+    <StackPanel Grid.Column="0" Margin="20">
+
+      <!-- Function Input -->
+      <controls:FunctionInput x:Name="FunctionInput" />
+
+      <!-- Parameter X -->
+      <controls:Parameter x:Name="ParameterX" Margin="0,20,0,0" Label="x =" />
+
+      <!-- Parameter H -->
+      <controls:Parameter x:Name="ParameterH" Margin="0,10,0,0" Label="h =" />
+
+      <!-- Parameter E -->
+      <controls:ErrorValueParameter x:Name="ErrorValue" />
+
+      <!-- Parameter e -->
+      <controls:DecimalPrecisionParameter x:Name="DecimalPrecision" />
+
+      <!-- Output Section -->
+      <controls:Output x:Name="Output" />
+
+    </StackPanel>
+
+    <!-- Right Panel - Plot Area -->
+    <Border Grid.Column="1" Margin="20"
+            Background="White"
+            BorderBrush="#FFCCCCCC"
+            BorderThickness="1">
+
+      <!-- Plot -->
+      <desmos:DesmosApiControl />
+    </Border>
+
+  </Grid>
+</UserControl>
